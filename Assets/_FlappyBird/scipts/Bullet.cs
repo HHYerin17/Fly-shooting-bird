@@ -1,8 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using GameTool;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : BasePooling
 {
-    
+    [SerializeField] private Rigidbody2D rb;
+    private float speed = 5f;
+
+    private void Start()
+    {
+        transform.localScale = 2 * Vector3.one;
+        rb.velocity = new Vector2(speed,0f);
+    }
 }

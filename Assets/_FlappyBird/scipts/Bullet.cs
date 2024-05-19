@@ -1,4 +1,3 @@
-using System;
 using GameTool;
 using UnityEngine;
 
@@ -16,5 +15,13 @@ public class Bullet : BasePooling
     private void Start()
     {
         transform.localScale = 2 * Vector3.one;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Block"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }

@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
 using GameTool;
-using UnityEngine;
 
 public class GameData : SingletonMonoBehaviour<GameData>
 {
     public GameDataSave Data;
-
+    public BlockData blockData;
     
     
     //[Header("SCENE FLOW")]

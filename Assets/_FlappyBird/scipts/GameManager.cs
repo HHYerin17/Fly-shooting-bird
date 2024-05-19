@@ -1,3 +1,4 @@
+using System;
 using GameTool;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private float cooldown = 5f;
     private float spawnDelay;
-
+    
     private void Update()
     {
         if (spawnDelay <= 0)

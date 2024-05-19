@@ -1,5 +1,3 @@
-using System;
-using DG.Tweening;
 using GameTool;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -33,11 +31,14 @@ public class Wall : BasePooling
 
         for (int i = 0; i < blockNumber; i++)
         {
+            BlockType blockType = (BlockType) Random.Range(0, 3);
             var block = (Block)PoolingManager.Instance.GetObject(NamePrefabPool.Block, transform, 
                 new Vector2(transform.position.x, posy[i]));
 
+            block.blockType = blockType;
+            block.SetData();
             block.sr.size = new Vector2(block.sr.size.x, height[i]);
-
+            block.coll.size = block.sr.size;
         }
     }
 
